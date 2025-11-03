@@ -7,7 +7,7 @@ public class MainEjercicio1 {
 	public static void main(String[] args) {
 		
 		
-		MainEjercicio1.pedirNumeroMayor(6, 20);
+		int numero = pedirNumeroMayor(6, 20);
 
 	}
 	
