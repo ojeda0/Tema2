@@ -9,37 +9,63 @@ public class MainEjercicio9 {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Introduce el primer número para ordenarlos de mayor a menor:");
-		int numero1 = sc.nextInt();
+		int a = sc.nextInt();
 		
 		System.out.println("Introduce el segundo número para ordenarlos de mayor a menor:");
-		int numero2 = sc.nextInt();
+		int b = sc.nextInt();
 		
 		System.out.println("Introduce el tercer número para ordenarlos de mayor a menor:");
-		int numero3 = sc.nextInt();
+		int c = sc.nextInt();
 		
 		sc.close();
 		
-		System.out.printf("");
+		System.out.printf("El primer número introducido ha sido: %d\n"
+				+ "El segundo número introducido ha sido: %d\n"
+				+ "El tercer número introducido ha sido: %d\n"
+				+ "%s", a, b, c, ordenarMayorMenor(a, b, c));
 		
 	}
 
-	public static String ordenarMayorMenor(int numero1, int numero2, int numero3) {
+	public static String ordenarMayorMenor(int a, int b, int c) {
 		
 		/*
-		 * numero1 > numero2 > numero3
-		 * numero1 > numero3 > numero2
-		 * 
+		 * a > b > c
+		 * a > c > b
+		 * b > a > c
+		 * b > c > a
+		 * c > a > b
+		 * c > b > a
 		 */
 		
 		String mensaje = "";
 		
-		if(numero1>numero2 && numero2>numero3) {
+		if(a>b && b>c) {
 			
-			mensaje = numero1 + " es mayor que " + numero2 + " es mayor que " + numero3;
+			mensaje = a + " es mayor que " + b + " y " + b + " es mayor que " + c;
 			
-		}else if(numero1>numero3 && numero3>numero2) {
+		}else if(a>c && c>b) {
 			
-			mensaje = numero1 + " es mayor que " + numero3 + " es mayor que " + numero2;
+			mensaje = a + " es mayor que " + c + " y " + c + " es mayor que " + b;
+			
+		}else if(b>a && a>c) {
+			
+			mensaje = b + " es mayor que " + a + " y " + a + " es mayor que " + c;
+			
+		}else if(b>c && c>a) {
+			
+			mensaje = b + " es mayor que " + c + " y " + c + " es mayor que " + a;
+			
+		} else if(c>a && a>b) {
+			
+			mensaje = c + " es mayor que " + a + " y " + a + " es mayor que " + b;
+			
+		} else if(c>b && b>a) {
+			
+			mensaje = c + " es mayor que " + b + " y " + b + " es mayor que " + a;
+			
+		} else {
+			
+			mensaje = "Debes introducir números diferentes para ordenarlos de mayor a menor.";
 			
 		}
 		
