@@ -42,10 +42,12 @@ public class MainEjercicio9 {
 		if(a>b && b>c) {
 			
 			mensaje = a + " es mayor que " + b + " y " + b + " es mayor que " + c;
+			//mensaje = String.format("%d es mayor que %d y %d es mayor que %d\n", a, b, b, c);
 			
 		}else if(a>c && c>b) {
 			
 			mensaje = a + " es mayor que " + c + " y " + c + " es mayor que " + b;
+			//mensaje = String.format("%d es mayor que %d y %d es mayor que %d\n", a, c, c, b);
 			
 		}else if(b>a && a>c) {
 			
