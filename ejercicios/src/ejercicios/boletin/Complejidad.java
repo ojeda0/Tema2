@@ -7,6 +7,16 @@ public class Complejidad {
 
 	// MÉTODOS
 
+	/*
+	 * Este método genera un número aleatorio del 1 al 100. A continuación, va 
+	 * pidiendo números y va mostrando por pantalla si el número a adivinar es 
+	 * mayor o menor que el introducido, además de los intentos que te quedan 
+	 * (tienes 10 intentos para acertarlo). El programa termina cuando se 
+	 * acierta el número (además muestra por pantalla en cuantos intentos 
+	 * lo has acertado), si se llega al limite de intentos te muestra el 
+	 * número que había generado.
+	 */
+	
 	public static void adivinaNumero() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -40,6 +50,14 @@ public class Complejidad {
 		sc.close();
 			
 	}
+	
+	/*
+	 * Según cierta cultura, los números de la suerte son el 3, el 7, el 8 y 
+	 * el 9. Los números de la mala suerte son el resto: el 0, el 1, el 2, 
+	 * el 4, el 5 y el 6. Un número es afortunado si contiene más números de 
+	 * la suerte que de la mala suerte. Este método imprime por pantalla si 
+	 * un número introducido por el usuario es afortunado o no.
+	 */
 	
 	public static void numerosAfortunados() {
 		
@@ -75,17 +93,65 @@ public class Complejidad {
 		
 	}
 	
+	/*
+	 * Nos han encargado realizar el validador de contraseña de una determinada web. 
+	 * El usuario debe introducir una contraseña y si la contraseña es válida, el 
+	 * sistema imprime por pantalla “CONTRASEÑA VÁLIDA”, en caso contrario, muestra 
+	 * “VUELVE A INTENTARLO” y vuelve a pedirla. La contraseña debe tener un mínimo 
+	 * de 10 caracteres. Cómo mínimo debe contener: dos letras mayúsculas, dos letras 
+	 * minúsculas, dos números y dos caracteres especiales (@, #, *, %, &, /).
+	 * 	NOTA: Te puedes ayudar de las siguientes funciones del tipo String:
+	 * 		matches("[a-z]") - Devuelve true si contiene una letra minúscula.
+	 * 		matches("[A-Z]") - Devuelve true si contiene una letra mayúscula.
+	 * 		matches("[0-9]") - Devuelve true si contiene un número.
+	 * 		matches("[@#*%&/]") - Devuelve true si contiene un carácter especial.
+	 */
+	
 	public static void validaPassword() {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int mayusculas = 0;
-		int minusculas = 0;
-		int numeros = 0;
-		int especiales = 0;
+		int mayus;
+		int minus;
+		int numeros;
+		int especiales;
+		String password;
 		
-		System.out.println("Ingresa una contraseña:");
-		String password = sc.next();
+		do {
+			mayus = 0;
+			minus = 0;
+			numeros = 0;
+			especiales = 0;
+			
+			System.out.println("Ingrese una contraseña:");
+			password = sc.next();
+			
+			for(int i=0; i < password.length(); i++) {
+				String caracter = password.substring(i, i+1); 
+				
+				if(caracter.matches("[a-z]")) {
+					minus++;
+				}
+				else if(caracter.matches("[A-Z]")) {
+					mayus++;				
+				}
+				else if(caracter.matches("[0-9]")) {
+					numeros++;
+				}
+				else if(caracter.matches("[@#*%&/]")){
+					especiales++;
+				}
+			}
+			
+			if(minus >= 2 && mayus >= 2 && numeros >= 2 && especiales >= 2 && password.length() >= 10) {
+				System.out.println("CONTRASEÑA VÁLIDA");
+			}
+			else {
+				System.out.println("VUELVE A INTENTARLO");
+			}
+		}while(minus < 2 || mayus < 2|| numeros < 2 || especiales < 2 || password.length() < 10);
+		
+		sc.close();
 		
 	}
 
