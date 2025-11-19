@@ -20,6 +20,8 @@ public class Main {
 			
 		}while(!(caracter.length()==1));
 		
+		sc.close();
+		
 	}
 
 }
