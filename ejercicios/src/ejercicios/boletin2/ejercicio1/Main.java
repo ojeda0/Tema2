@@ -22,7 +22,7 @@ public class Main {
 				
 				System.out.println("¡Debes introducir un solo caracter!");
 				
-			}else if(caracter.matches("[!#$%&'()*+,-./:;<=>?@^_`{|}~]")) {
+			}else if(caracter.matches("[!#$%&'()*+,/:;<=>?@^_`{|}~]")) {
 				
 				System.out.println("¡Debes introducir un caracter válido!");
 				
@@ -30,8 +30,14 @@ public class Main {
 				
 				System.out.printf("¡Has introducido el caracter %s! Este caracter SI es una vocal.\n", caracter);	
 				
+			}else if(caracter.equals(".")) {
+				
+				System.out.printf("¡Has introducido el caracter %s! Has salido del programa.\n", caracter);
+				
 			}else {
+				
 				System.out.printf("¡Has introducido el caracter %s! Este caracter NO es una vocal.\n", caracter);
+				
 			}
 			
 		}while(!(caracter.equals(".")));
