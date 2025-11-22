@@ -1,4 +1,4 @@
-package ejercicios.boletin2.ejercicio6;
+package ejercicios.boletin2.ejercicio06;
 
 import java.util.Scanner;
 
@@ -7,6 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		/*
+		 * EJERCICIO 6
+		 * 
 		 * Introducir una cadena de caracteres e indicar si es un palíndromo. 
 		 * Una palabra palíndroma es aquella que se lee igual adelante que atrás.
 		 */
