@@ -55,7 +55,6 @@ public class Main {
 				+ "Suma de los números pares: %d\n", numero, pares, sumaPares);
 		
 		sc.close();
-		
 	}
 
 }
