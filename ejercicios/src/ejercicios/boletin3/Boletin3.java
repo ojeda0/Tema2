@@ -79,6 +79,95 @@ public class Boletin3 {
 		System.out.println("Introduce la altura de la U para dibujarla con asteriscos:");
 		altura = sc.nextInt();
 		
+		for(int i=1; i <= altura-1; i++) {
+			
+			System.out.print("*");
+			
+			for(int j=1; j <= altura-2; j++) {
+				
+				System.out.print(" ");
+			}
+			
+			System.out.println("*");
+			
+		}
+		
+		System.out.print(" ");
+		
+		for(int i=1; i <= altura-2; i++) {
+			
+			System.out.print("*");
+			
+		}
+		
+		System.out.println(" ");
+		
+		sc.close();;
+		
+	}
+	
+	public static void insertarDigito() {
+		
+		/*
+		 * EJERCICIO 3
+		 * 
+		 * Programa que sea capaz de insertar un dígito dentro de un número indicando la posición. 
+		 * El nuevo dígito se colocará en la posición indicada y el resto de dígitos se desplazará hacia la derecha. 
+		 * Las posiciones se cuentan de izquierda a derecha empezando por el 1.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+
+		long numero;
+		long numeroCambiado;
+		int posicion;
+		int digito;
+		long aux;
+		int cifras = 0;
+
+		do {
+			
+			System.out.print("Dime un entero positivo: ");
+			numero = sc.nextLong();
+			
+		} while (numero <= 0);
+
+		aux = numero;
+
+		while (aux > 0) {
+			
+			aux = aux / 10;
+			cifras++;
+			
+		}
+
+		do {
+			
+			System.out.print("Dime la posicion donde quieres insertar: ");
+			posicion = sc.nextInt();
+			
+		} while (posicion > cifras || posicion < 1);
+
+		do {
+			
+			System.out.print("Dime el digito que quieres insertar: ");
+			digito = sc.nextInt();
+			
+		} while (digito > 9 || digito < 0);
+
+		int corte = (int) Math.pow(10, cifras - posicion + 1);
+		
+		long parteIzq = numero / corte;
+		
+		long parteDer = numero % corte;
+		
+		parteIzq = (parteIzq * 10 + digito) * corte;
+
+		numeroCambiado = parteIzq + parteDer;
+
+		System.out.printf("El número resultante es %d \n", numeroCambiado);
+
+		sc.close();
 		
 	}
 	
