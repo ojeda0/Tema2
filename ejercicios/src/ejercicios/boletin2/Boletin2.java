@@ -7,6 +7,57 @@ public class Boletin2 {
 
 	// MÉTODOS
 	
+	public static void Ejercicio4() {
+		
+		/*
+		 * EJERCICIO 4
+		 * 
+		 * Pide una cadena y dos caracteres por teclado (valida que sea un carácter), 
+		 * sustituye la aparición del primer carácter en la cadena por el segundo carácter.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Introduce una palabra:");
+		String palabra = sc.next();
+		
+		String caracter1;
+		
+		do {
+			
+			System.out.println("Dime el caracter 1:");
+			caracter1 = sc.next();
+			
+		}while(caracter1.length() != 1);
+		
+		String caracter2;
+		
+		do {
+			
+			System.out.println("Dime el caracter 2:");
+			caracter2 = sc.next();
+			
+		}while(caracter2.length() != 1);
+		
+		for(int i=0; i<palabra.length(); i++) {
+			
+			String caracter = palabra.substring(i, i+1);
+			
+			if(caracter.equalsIgnoreCase(caracter1)) {
+				
+				System.out.print(caracter2);
+				
+			}
+			else {
+				System.out.println(caracter);
+			}
+			
+		}
+		
+		sc.close();
+		
+	}
+	
 	public static void Ejercicio6() {
 
 		/*
@@ -28,7 +79,7 @@ public class Boletin2 {
 		String cadenaLimpia = cadena.replace(" ","");
 		
 		for(int i=cadenaLimpia.length()-1; i>=0; i--) {
-			cadenaInvertida += cadenaLimpia.charAt(i);
+			cadenaInvertida += cadenaLimpia.substring(i, i+1);
 		}
 		
 		if(cadenaLimpia.equalsIgnoreCase(cadenaInvertida)) {

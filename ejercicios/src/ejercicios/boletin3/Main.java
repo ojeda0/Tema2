@@ -6,7 +6,7 @@ public class Main {
 		
 		// Boletin3.conversorPalotes();
 		
-		// Boletin3.pintarAsteriscos();
+		Boletin3.pintarAsteriscos();
 		
 		// Boletin3.insertarDigito();
 		

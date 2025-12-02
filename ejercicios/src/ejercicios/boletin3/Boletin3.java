@@ -76,8 +76,10 @@ public class Boletin3 {
 		
 		int altura;
 		
-		System.out.println("Introduce la altura de la U para dibujarla con asteriscos:");
-		altura = sc.nextInt();
+		do {
+			System.out.println("Introduce la altura de la U para dibujarla con asteriscos:");
+			altura = sc.nextInt();
+		}while(altura<=2);
 		
 		for(int i=1; i <= altura-1; i++) {
 			
@@ -102,7 +104,7 @@ public class Boletin3 {
 		
 		System.out.println(" ");
 		
-		sc.close();;
+		sc.close();
 		
 	}
 	
@@ -168,6 +170,10 @@ public class Boletin3 {
 		System.out.printf("El número resultante es %d \n", numeroCambiado);
 
 		sc.close();
+		
+	}
+	
+	public static void serpiente() {
 		
 	}
 	
