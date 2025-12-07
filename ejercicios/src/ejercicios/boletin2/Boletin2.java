@@ -7,7 +7,86 @@ public class Boletin2 {
 
 	// MÉTODOS
 	
-	public static void Ejercicio4() {
+	public static void ejercicio1() {
+		
+		/*
+		 * EJERCICIO 1
+		 * 
+		 * Algoritmo que pida caracteres e imprima 'VOCAL' si son vocales y 
+		 * 'NO VOCAL' en caso contrario, el programa termina cuando se introduce un punto.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Introduce un caracter para saber si es vocal o no, si quieres parar el programa usa un punto (.):");
+		String caracter = sc.next();
+		
+		if((caracter.equalsIgnoreCase("a")) || (caracter.equalsIgnoreCase("e")) || (caracter.equalsIgnoreCase("i")) || (caracter.equalsIgnoreCase("o")) || (caracter.equalsIgnoreCase("u"))) {
+			
+			System.out.printf("El caracter introducido %s SI es una vocal.\n", caracter);
+			
+		}else if(caracter.equalsIgnoreCase(".")) {
+			
+			System.out.println("Has finalizado el programa.");
+			
+		}else {
+			
+			System.out.printf("El caracter introducido %s NO es una vocal.\n", caracter);
+			
+		}
+		
+		sc.close();
+	}
+	
+	public static void ejercicio2() {
+
+		/*
+		 * EJERCICIO 3
+		 * 
+		 * Pide una cadena y un carácter por teclado (valida que sea un carácter)
+		 * y muestra cuantas veces aparece el carácter en la cadena.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String caracter = "";
+		String cadena = "";
+		int contador = 0;
+		
+		System.out.println("Introduce una palabra:");
+		cadena = sc.next();
+		
+		
+		do {
+			
+			System.out.println("Introduce un caracter para ver cuántas veces aparece en la palabra introducida:");
+			caracter = sc.next();
+			
+			if(caracter.length() != 1) {
+				
+				System.out.println("¡Debes introducir 1 solo caracter!");
+				
+			}
+			
+		} while(caracter.length() != 1);
+		
+		for(int i = 0; i < cadena.length(); i++) {
+			
+			if(cadena.substring(i, i + 1).equalsIgnoreCase(caracter)) {
+				contador++;
+			}
+			
+		}
+		
+		System.out.printf("La palabra introducida ha sido: %s\n"
+				+ "El caracter introducido ha sido: %s\n"
+				+ "Este caracter aparece %d veces en la palabra.\n", cadena, caracter, contador);
+		
+		sc.close();
+		
+	}
+	
+	public static void ejercicio4() {
 		
 		/*
 		 * EJERCICIO 4
@@ -58,7 +137,7 @@ public class Boletin2 {
 		
 	}
 	
-	public static void Ejercicio6() {
+	public static void ejercicio6() {
 
 		/*
 		 * EJERCICIO 6
@@ -99,7 +178,7 @@ public class Boletin2 {
 		sc.close();
 	}
 	
-	public static void Ejercicio13() {
+	public static void ejercicio13() {
 
 		/*
 		 * EJERCICIO 13
@@ -136,7 +215,7 @@ public class Boletin2 {
 				+ "Goles de Isco: %d", numeroString, golesTorrent, golesBetis, golesIsco);
 	}
 	
-	public static void Ejercicio14() {
+	public static void ejercicio14() {
 
 		/*
 		 * EJERCICIO 14
