@@ -86,6 +86,49 @@ public class Boletin2 {
 		
 	}
 	
+	public static void ejercicio3() {
+		
+		/*
+		 * Suponiendo que hemos introducido una cadena por teclado que representa una frase 
+		 * (palabras separadas por espacios), realiza un programa que 
+		 * cuente cuantas palabras tiene.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String frase;
+		int contadorPalabras = 1;
+		
+		do {
+			
+			System.out.println("Introduce una frase para saber cuántas palabras tiene:");
+			frase = sc.nextLine();
+			
+			if(frase.length() == 0) {
+				
+				System.out.println("¡Recuerda, debes introducir al menos una palabra para la frase!");
+				
+			}
+		
+		}while(frase.length() == 0);
+		
+		for(int i = 0; i<frase.length(); i++) {
+			
+			if (frase.substring(i, i+1).equalsIgnoreCase(" ")) {
+				
+				contadorPalabras++;
+				
+			}
+			
+		}
+		
+		System.out.printf("La frase introducida ha sido: %s\n"
+				+ "Esta frase tiene %d palabras.\n", frase, contadorPalabras);
+		
+		sc.close();
+		
+	}
+	
 	public static void ejercicio4() {
 		
 		/*
