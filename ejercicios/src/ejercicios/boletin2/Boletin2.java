@@ -114,7 +114,7 @@ public class Boletin2 {
 		
 		for(int i = 0; i<frase.length(); i++) {
 			
-			if (frase.substring(i, i+1).equalsIgnoreCase(" ")) {
+			if(frase.substring(i, i+1).equalsIgnoreCase(" ")) {
 				
 				contadorPalabras++;
 				
@@ -171,7 +171,7 @@ public class Boletin2 {
 				
 			}
 			else {
-				System.out.println(caracter);
+				System.out.print(caracter);
 			}
 			
 		}
@@ -198,7 +198,7 @@ public class Boletin2 {
 		System.out.println("Introduce una palabra o frase para comprobar si es palíndroma o no:");
 		cadena = sc.nextLine();
 		
-		String cadenaLimpia = cadena.replace(" ","");
+		String cadenaLimpia = cadena.replaceAll(" ","");
 		
 		for(int i=cadenaLimpia.length()-1; i>=0; i--) {
 			cadenaInvertida += cadenaLimpia.substring(i, i+1);

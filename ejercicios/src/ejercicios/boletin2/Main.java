@@ -8,7 +8,7 @@ public class Main {
 		// Boletin2.Ejercicio13();
 		// Boletin2.ejercicio1();
 		// Boletin2.ejercicio2();
-		Boletin2.ejercicio3();
+		Boletin2.ejercicio4();
 		
 	}
 
