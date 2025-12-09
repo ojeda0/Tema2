@@ -86,27 +86,100 @@ public class Repaso {
 		
 	}
 	
-	public static int factorial(int numero) {
+	public static int digitoN(int numero, int posicion) {
 		
-		if(numero == 0) {
-			return 1;
+		int totalDigitos = digitos(numero);
+		
+		/*int totalDigitos = 0;
+		
+		int aux = numero;
+		
+		while(aux > 0) {
+			
+			aux /= 10;
+			totalDigitos++;
+			
+		}*/
+		
+		int digitosDerecha = totalDigitos - 1 - posicion;
+		
+		for(int i = 0; i < digitosDerecha; i++) {
+			
+			numero = numero / 10;
+			
 		}
 		
-		return numero * factorial(numero-1);
+		return numero % 10;
+	}
+	
+	public static boolean esCapicua(int numero) {
+		
+		boolean numeroCapicuo = false;
+		
+		int numeroVolteado = voltea(numero);
+		
+		/*int numeroVolteado = 0;
+		
+		while(numero > 0) {
+			
+			int digito = numero % 10;
+			
+			numeroVolteado *= 10 + digito;
+			
+			numero /= 10;
+			
+		}*/
+		
+		if(numeroVolteado == numero) {
+			
+			numeroCapicuo = true;
+			
+		}
+		
+		return numeroCapicuo;
 		
 	}
 	
-	public static int fibonacci(int numero) {
+	public static int potencia(int base, int exponente) {
 		
-		if(numero == 1) {
-			return 1;
+		int potenciaNumero = 1;
+		
+		for(int i = 0; i < exponente; i++) {
+			
+			potenciaNumero *= base;
+			
 		}
 		
-		if(numero == 2) {
-			return 1;
+		return potenciaNumero;
+		
+	}
+	
+	public static int posicionDeDigito(int numero, int digito) {
+		
+		int totalDigitos = 0;
+		
+		int aux = numero;
+		
+		while(aux > 0) {
+			
+			aux /= 10;
+			totalDigitos++;
+			
 		}
 		
-		return fibonacci(numero-1) + fibonacci(numero-2);
+		for(int i = 0; i < totalDigitos; i++) {
+			
+			int posicion = digitoN(numero, i);
+			
+			if(posicion == digito) {
+				
+				return i;
+				
+			}
+			
+		}
+		
+		return -1;
 		
 	}
 	
