@@ -4,7 +4,7 @@ public class RepasoRecursividad {
 
 	//MÉTODOS
 	
-public static int factorial(int numero) {
+	public static int factorial(int numero) {
 		
 		if(numero == 0) {
 			return 1;

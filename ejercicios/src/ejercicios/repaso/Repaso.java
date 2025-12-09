@@ -183,4 +183,24 @@ public class Repaso {
 		
 	}
 	
+	
+	public static int pegaPorDelante(int numero, int numeroPegar) {
+		
+		int multiplica = 1;
+		
+		int aux = numero;
+		
+		while(aux > 0) {
+			
+			multiplica *= 10;
+			
+			aux /= 10;
+			
+		}
+		
+		int resultado = numeroPegar * multiplica + numero;
+		
+		return resultado;
+		
+	}
 }

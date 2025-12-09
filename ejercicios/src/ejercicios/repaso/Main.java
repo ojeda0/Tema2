@@ -13,6 +13,8 @@ public class Main {
 		//System.out.println(Repaso.esCapicua(56565));
 		//System.out.println(Repaso.potencia(2, 4));
 		//System.out.println(Repaso.posicionDeDigito(5646, 4));
+		System.out.println(Repaso.pegaPorDelante(200, 20));
+		
 		
 	}
 
